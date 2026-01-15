@@ -1,12 +1,16 @@
 // Define CourseID and Course types
-type CourseID = string;
+export type CourseWithDetails = {
+  readonly id: string;
+  readonly department: string;
+  readonly name: string;
+  readonly description: string;
+  readonly credits: number;
+  readonly prerequisites: readonly string[];
+  readonly corequisites: readonly string[];
+};
 
-type Course = {
-    readonly id: CourseID;
-    readonly prerequisites: readonly CourseID[];
-    readonly name: string;
-    readonly description: string;
-    readonly credits: number;
-}
-
-export { type CourseID, type Course };
+export type RawCourseData = {
+  dept: string;
+  code: string;
+  title: string;
+};
