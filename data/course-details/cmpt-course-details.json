@@ -1,0 +1,736 @@
+{
+  "metadata": {
+    "fetchedAt": "2026-01-19T23:59:43.595Z",
+    "department": "CMPT",
+    "fetchType": "course-detail",
+    "totalCourse": 84,
+    "successfulFetches": 60,
+    "failedFetches": 24,
+    "sources": "SFU Course Outlines API",
+    "notes": "Some courses failed to fetch details"
+  },
+  "courses": [
+    {
+      "code": "105W",
+      "title": "Social Issues and Communication Strategies in Computing Science",
+      "description": "This course teaches the fundamentals of informative and persuasive communication for professional engineers and computer scientists. A principal goal of this course is to assist students in thinking critically about various contemporary technical, social, and ethical issues. It focuses on communicating technical information clearly and concisely, managing issues of persuasion when communicating with diverse audiences, presentation skills, and teamwork.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "120",
+      "title": "Introduction to Computing Science and Programming I",
+      "description": "An elementary introduction to computing science and computer programming, suitable for students with little or no programming background. Students will learn fundamental concepts and terminology of computing science, acquire elementary skills for programming in a high-level language, e.g. Python. The students will be exposed to diverse fields within, and applications of computing science. Topics will include: pseudocode; data types and control structures; fundamental algorithms; recursion; reading and writing files; measuring performance of algorithms; debugging tools; basic terminal navigation using shell commands. Treatment is informal and programming is presented as a problem-solving tool. ",
+      "units": 3,
+      "prerequisites": "BC Math 12 or equivalent is recommended.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "125",
+      "title": "Introduction to Computing Science and Programming II",
+      "description": "A rigorous introduction to computing science and computer programming, suitable for students who already have some background in computing science and programming.  Intended for students who will major in computing science or a related program. Topics include: memory management; fundamental algorithms; formally analyzing the running time of algorithms; abstract data types and elementary data structures; object-oriented programming and software design; specification and program correctness; reading and writing files; debugging tools; shell commands.",
+      "units": 3,
+      "prerequisites": "CMPT 120 or CMPT 130, with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "130",
+      "title": "Introduction to Computer Programming I",
+      "description": "An introduction to computing science and computer programming, using a systems oriented language, such as C or C++. This course introduces basic computing science concepts. Topics will include: elementary data types, control structures, functions, arrays and strings, fundamental algorithms, computer organization and memory management.",
+      "units": 3,
+      "prerequisites": "BC Math 12 (or equivalent, or any of MATH 100, 150, 151, 154, or 157, with a minimum grade of C-).",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "201",
+      "title": "Systems Programming",
+      "description": "An introduction to a UNIX-like application-OS interface from a programmer's perspective. Introduces operating systems and their interfaces for user-level programs. Students learn how to programmatically interact with an OS efficiently, correctly, and securely. Topics include: command-line tools, programming with memory, processes, threads, IPC, as well as basics of OS security.",
+      "units": 4,
+      "prerequisites": "(CMPT 125 or CMPT 135) and MACM 101, both with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "210",
+      "title": "Probability and Computing",
+      "description": "Probability has become an essential tool in modern computer science with applications in randomized algorithms, computer vision and graphics, systems, data analysis, and machine learning. The course introduces the foundational concepts in probability as required by many modern applications in computing.",
+      "units": 3,
+      "prerequisites": "MACM 101, MATH 152, CMPT 125 or CMPT 135, and (MATH 240 or MATH 232), all with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "213",
+      "title": "Object Oriented Design in Java",
+      "description": "An introduction to object oriented design using Java. The Java programming language is introduced,\r\nwith an emphasis on its advanced features. The course covers the building blocks of object oriented\r\ndesign including inheritance, polymorphism, interfaces and abstract classes. A number of object oriented design patterns are presented, such as observer, iterator, and singleton. The course also teaches best-practices in code construction. It includes a basic introduction to programming event driven graphical user interfaces.",
+      "units": 3,
+      "prerequisites": "CMPT 225 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "225",
+      "title": "Data Structures and Programming",
+      "description": "Introduction to a variety of practical and important data structures and methods for implementation and for experimental and analytical evaluation. Topics include: stacks, queues and lists; search trees; hash tables and algorithms; efficient sorting; object-oriented programming; time and space efficiency analysis; and experimental evaluation. ",
+      "units": 3,
+      "prerequisites": "(MACM 101 and (CMPT 125, CMPT 129 or CMPT 135)) or (ENSC 251 and ENSC 252), all with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "263",
+      "title": "Introduction to Human-Centered Computing",
+      "description": "Surveys contemporary Human-Computer Interaction (HCI) topics on designing, implementing, and evaluating interactive computer systems from a human-centered perspective. Students will learn important concepts including understanding users, incorporating accountability and responsibility in design, creating accessible and inclusive systems, and evaluating system interfaces with well-established methodologies.",
+      "units": 3,
+      "prerequisites": "CMPT 125 or CMPT 135, with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D200"
+    },
+    {
+      "code": "276",
+      "title": "Introduction to Software Engineering",
+      "description": "An overview of various techniques used for software development and software project management. Major tasks and phases in modern software development, including requirements, analysis, documentation, design, implementation, testing,and maintenance. Project management issues are also introduced. Students complete a team project using an iterative development process.",
+      "units": 3,
+      "prerequisites": "One W course, CMPT 225, (MACM 101 or (ENSC 251 and ENSC 252)) and (MATH 151 or MATH 150), all with a minimum grade of C-. MATH 154 or MATH 157 with at least a B+ may be substituted for MATH 151 or MATH 150.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "295",
+      "title": "Introduction to Computer Systems",
+      "description": "The curriculum introduces students to topics in computer architecture that are considered fundamental to an understanding of the digital systems underpinnings of computer systems. ",
+      "units": 4,
+      "prerequisites": "Either (MACM 101 and (CMPT 125 or CMPT 135)) or (MATH 151 and CMPT 102 for students in an Applied Physics program), all with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "307",
+      "title": "Data Structures and Algorithms",
+      "description": "Design and analysis of efficient data structures and algorithms. General techniques for building and analyzing algorithms (greedy, divide & conquer, dynamic programming, network flows). Introduction to NP-completeness.",
+      "units": 3,
+      "prerequisites": "CMPT 225, (MACM 201 or CMPT 210), (MATH 150 or MATH 151), and (MATH 232 or MATH 240), all with a minimum grade of C-. MATH 154 or MATH 157 with a grade of at least B+ may be substituted for MATH 150 or MATH 151.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "308",
+      "title": "Computability and Complexity",
+      "description": "Formal models of computation such as automata and Turing machines. Decidability and undecidability. Recursion Theorem. Connections between computability and logic (Gödel’s Incompleteness). Time and space complexity classes. NP-completeness.",
+      "units": 3,
+      "prerequisites": "(MACM 201 or CMPT 210) with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "310",
+      "title": "Introduction to Artificial Intelligence",
+      "description": "Artificial intelligence is an area with vast application scenarios. This course is intended as a prerequisite for advanced-level AI courses and covers the fundamental concepts and foundational mathematical formulations in machine learning and AI. Topics include supervised learning, linear regression, gradient descent, search algorithms, Markov decision processes, and Bayes nets.",
+      "units": 3,
+      "prerequisites": "CMPT 225 and STAT 271, all with a minimum grade of C-. Recommended: MATH 251.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "354",
+      "title": "Database Systems I",
+      "description": "Logical representations of data records. Data models. Studies of some popular file and database systems. Document retrieval. Other related issues such as database administration, data dictionary and security.",
+      "units": 3,
+      "prerequisites": "CMPT 225 and (MACM 101 or (ENSC 251 and ENSC 252)), all with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "361",
+      "title": "Introduction to Visual Computing",
+      "description": "Provides a unified introduction to the fundamentals of computer graphics and computer vision (visual computing). Topics include graphics pipelines, sampling and aliasing, geometric transformations, projection and camera models, meshing, texturing, color theory, image filtering and registration, shading and illumination, raytracing, rasterization, animation, optical flow, and game engines.",
+      "units": 3,
+      "prerequisites": "CMPT 225 and STAT 271, both with a minimum grade of C-. Recommended: MATH 251.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "362",
+      "title": "Mobile Applications Programming and Design",
+      "description": "Teaches students how to design and implement smartphone applications. Topics include development environment, phone emulator, key programming paradigms, UI design including views, fragments, and activities, data persistence, threads, services, embedded sensors, and location based services (e.g., Google Maps). Concepts are reinforced through programming assignments and group projects.",
+      "units": 3,
+      "prerequisites": "CMPT 225 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "365",
+      "title": "Multimedia Systems",
+      "description": "Multimedia systems design, multimedia hardware and software, issues in effectively representing, processing, and retrieving multimedia data such as text, graphics, sound and music, image and video.",
+      "units": 3,
+      "prerequisites": "CMPT 225 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "371",
+      "title": "Data Communications and Networking",
+      "description": "Data communication fundamentals (data types, rates, and transmission media). Network architectures for local and wide areas. Communications protocols suitable for various architectures. ISO protocols and internetworking. Performance analysis under various loadings and channel error rates.",
+      "units": 3,
+      "prerequisites": "CMPT 225 and (MATH 151 or MATH 150), with a minimum grade of C-. MATH 154 or MATH 157 with a grade of at least B+ may be substituted for MATH 151 (MATH 150).",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "373",
+      "title": "Software Development Methods",
+      "description": "Survey of modern software development methodology. Several software development process models will be examined, as will the general principles behind such models. Provides experience with different programming paradigms and their advantages and disadvantages during software development.",
+      "units": 3,
+      "prerequisites": "CMPT 276 or 275, with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "376W",
+      "title": "Professional Responsibility and Technical Writing",
+      "description": "Covers professional writing in computing science, including format conventions and technical reports. The basis for ethical decision-making and the methodology for reaching ethical decisions concerning computing matters will be studied. Students will survey and write research papers, and both individual and group work will be emphasized.",
+      "units": 3,
+      "prerequisites": "CMPT 105W and (CMPT 275 or CMPT 276), with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "383",
+      "title": "Comparative Programming Languages",
+      "description": "Various concepts and principles underlying the design and use of modern programming languages are considered in the context of procedural, object-oriented, functional and logic programming languages. Topics include data and control structuring constructs, facilities for modularity and data abstraction, polymorphism, syntax, and formal semantics.",
+      "units": 3,
+      "prerequisites": "CMPT 225 and (MACM 101 or (ENSC 251 and ENSC 252)), all with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "403",
+      "title": "System Security and Privacy",
+      "description": "Starting from cybersecurity principles, students will learn to protect systems from attacks on data confidentiality, integrity, system availability, and user privacy. By modeling system security, students will learn to find weaknesses in software, hardware, networks, data storage systems, and the Internet, and identify current security practices to protect these systems.",
+      "units": 3,
+      "prerequisites": "CMPT 201 or CMPT 300, with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "405",
+      "title": "Design and Analysis of Computing Algorithms",
+      "description": "Models of computation, methods of algorithm design; complexity of algorithms; algorithms on graphs, NP-completeness, approximation algorithms, selected topics.",
+      "units": 3,
+      "prerequisites": "CMPT 307 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "410",
+      "title": "Machine Learning",
+      "description": "Machine Learning (ML) is the study of computer algorithms that improve automatically through experience. This course introduces students to the theory and practice of machine learning, and covers mathematical foundations, models such as (generalized) linear models, kernel methods and neural networks, loss functions for classification and regression, and optimization methods.",
+      "units": 3,
+      "prerequisites": "CMPT 310 and MACM 316, both with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "413",
+      "title": "Computational Linguistics",
+      "description": "This course examines the theoretical and applied problems of constructing and modelling systems, which aim to extract and represent the meaning of natural language sentences or of whole discourses, but drawing on contributions from the fields of linguistics, cognitive psychology, artificial intelligence and computing science.",
+      "units": 3,
+      "prerequisites": "Completion of nine units in Computing Science upper division courses or, in exceptional cases, permission of the instructor.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "417",
+      "title": "Intelligent Systems",
+      "description": "Intelligent Systems using modern constraint programming and heuristic search methods. A survey of this rapidly advancing technology as applied to scheduling, planning, design and configuration. An introduction to constraint programming, heuristic search, constructive (backtrack) search, iterative improvement (local) search, mixed-initiative systems and combinatorial optimization.",
+      "units": 3,
+      "prerequisites": "CMPT 225 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "419",
+      "title": "Special Topics in Artificial Intelligence",
+      "description": "Current topics in artificial intelligence depending on faculty and student interest.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "431",
+      "title": "Distributed Systems",
+      "description": "An introduction to distributed systems: systems consisting of multiple physical components connected over a network. Architectures of such systems, ranging from client-server to peer-to-peer. Distributed systems are analyzed via case studies of real network file systems, replicated systems, sensor networks and peer-to-peer systems. Hands-on experience designing and implementing a complex distributed system.",
+      "units": 3,
+      "prerequisites": "(CMPT 201 or CMPT 300) and CMPT 371, both with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "441",
+      "title": "Computational Biology",
+      "description": "This course introduces students to the computing science principles underlying computational biology. The emphasis is on the design, analysis and implementation of computational techniques. Possible topics include algorithms for sequence alignment, database searching, gene finding, phylogeny and structure analysis. ",
+      "units": 3,
+      "prerequisites": "CMPT 307 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "E100"
+    },
+    {
+      "code": "454",
+      "title": "Database Systems II",
+      "description": "An advanced course on database systems which covers crash recovery, concurrency control, transaction processing, distributed database systems as the core material and a set of selected topics based on the new developments and research interests, such as object-oriented data models and systems, extended relational systems, deductive database systems, and security and integrity.",
+      "units": 3,
+      "prerequisites": "(CMPT 201 or CMPT 300) and CMPT 354, with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "459",
+      "title": "Special Topics in Database Systems",
+      "description": "Current topics in database and information systems depending on faculty and student interest.",
+      "units": 3,
+      "prerequisites": "CMPT 354 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "464",
+      "title": "Geometric Modelling in Computer Graphics",
+      "description": "Covers advanced topics in geometric modelling and processing for computer graphics, such as Bezier and B-spline techniques, subdivision curves and surfaces, solid modelling, implicit representation, surface reconstruction, multi-resolution modelling, digital geometry processing (e.g. mesh smoothing, compression, and parameterization), point-based representation, and procedural modelling.",
+      "units": 3,
+      "prerequisites": "CMPT 361, MACM 316, both with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "469",
+      "title": "Special Topics in Computer Graphics",
+      "description": "Current topics in computer graphics depending on faculty and student interest.",
+      "units": 3,
+      "prerequisites": "CMPT 361 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "477",
+      "title": "Introduction to Formal Verification",
+      "description": "Introduces, at an accessible level, a formal framework for symbolic model checking, one of the most important verification methods. The techniques are illustrated with examples of verification of reactive systems and communication protocols. Students learn to work with a model checking tool.",
+      "units": 3,
+      "prerequisites": "CMPT 275 or 276, with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "479",
+      "title": "Special Topics in Computing Systems",
+      "description": "Current topics in computing systems depending on faculty and student interest.",
+      "units": 3,
+      "prerequisites": "CMPT 201 or CMPT 300, with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "489",
+      "title": "Special Topics in Programming Languages",
+      "description": "Current topics in programming languages depending on faculty and student interest.",
+      "units": 3,
+      "prerequisites": "CMPT 383 with a minimum grade of C-.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "D100"
+    },
+    {
+      "code": "701",
+      "title": "Computability and Logic",
+      "description": "Deep connections between logic and computation have been evident since early work in both areas. More recently, logic-based methods have led to important progress in diverse areas of computing science. This course will provide a foundation in logic and computability suitable for students who wish to understand the application of logic in various areas of CS, or as preparation for more advanced study in logic or theoretical CS.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "705",
+      "title": "Design and Analysis of Algorithms",
+      "description": "The objective of this course is to expose students to basic techniques in algorithm design and analysis. Topics will include greedy algorithms, dynamic programming, advanced data structures, network flows, randomized algorithms.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "711",
+      "title": "Bioinformatics Algorithms",
+      "description": "Fundamental algorithmic techniques used to solve computational problems encountered in molecular biology. This area is usually referred to as Bioinformatics or Computational Biology. Students who have taken CMPT 881 (Bioinformatics) in 2007 or earlier may not take CMPT 711 for further credit.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "713",
+      "title": "Natural Language Processing",
+      "description": "Natural Language Processing is the automatic analysis of human languages such as English, Korean, and thousands of others analyzed by computer algorithms. Unlike artificially created programming languages where the structure and meaning of programs is easy to encode, human languages provide an interesting challenge, both in terms of its analysis and the learning of language from observations. Covers NLP tasks such as language modeling, machine translation, multilingual processing, information extraction, question answering, and other topics relevant to modern NLP.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "726",
+      "title": "Machine Learning",
+      "description": "Machine Learning is the study of computer algorithms that improve automatically through experience. Provides students who conduct research in machine learning, or use it in their research, with a grounding in both the theoretical justification for, and practical application of, machine learning algorithms. Covers techniques in supervised and unsupervised learning, the graphical model formalism, and algorithms for combining models. Students who have taken CMPT 882 (Machine Learning) in 2007 or earlier may not take CMPT 726 for further credit.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "729",
+      "title": "Reinforcement Learning",
+      "description": "Reinforcement learning is the branch of machine learning that studies learning to act. Agents observe, predict, and act to change their environment. Reinforcement learning has notable success in learning to play video & board games, improving robot performance, and task scheduling. Many recent successes have utilized neural nets, an approach known as deep reinforcement learning.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "732",
+      "title": "Big Data Lab I",
+      "description": "The first of two lab courses that are part of the master of science in big data. This lab course aims to provide students with experience needed for a successful career in big data in the information technology industry. Students will earn core concepts of artificial intelligence and data engineering to work with large, or otherwise complex, data sources. Specifically, this includes statistics and data visualization, data pipeline engineering, and modelling. Many of the assignments will be completed on publicly available, massive data sets giving students hands-on experience with cloud computing, streaming data, and scalable computation - algorithms and software tools needed to master programming for big data.",
+      "units": 6,
+      "prerequisites": "This course is only available to students enrolled in the master of science in big data program.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "742",
+      "title": "Visual Computing Lab I",
+      "description": "Lab practices, combined with instructional offerings, for students to acquire the hands-on experience necessary for a successful career in Visual Computing in the information technology sector. Topics covered will include fundamental and prevalent problems from application domains in the fields of computer graphics, computer vision, human-computer interaction, medical image analysis, as well as visualization.",
+      "units": 6,
+      "prerequisites": "This course is only available to students enrolled in the master of visual computing program.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "762",
+      "title": "Computer Vision",
+      "description": "Selected topics in computer vision including cameras, edge detection, feature matching, optical flow, alignment, epipolar geometry, stereo, structure-from-motion, recognition, segmentation, detection, and deep learning.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "764",
+      "title": "Geometric Modelling in Computer Graphics",
+      "description": "Advanced topics in geometric modelling and processing for computer graphics, such as Bezier and B-spline techniques, subdivision curves and surfaces, solid modelling, implicit representation, surface reconstruction, multi-resolution modelling, digital geometry processing (e.g., mesh smoothing, compression, and parameterization), point-based representation, and procedural modelling.",
+      "units": 3,
+      "prerequisites": "Recommended: CMPT 361 and MACM 316.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "766",
+      "title": "Computer Animation and Simulation",
+      "description": "Selected topics in computer animation and simulation, including 3D character animation and control, facial animation, simulation of natural phenomena (i.e. fluids, crowd simulation, and deformation of pliant materials).",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "777",
+      "title": "Formal Verification",
+      "description": "The goal of formal verification is to prove correctness or to find mistakes in software and other systems. This course introduces, at an accessible level, a formal framework for symbolic model checking, one of the most important verification methods. The techniques are illustrated with examples of verification of reactive systems and communication protocols. Students learn to work with a model checking tool such as NuSMV.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "782",
+      "title": "Cybersecurity Lab I",
+      "description": "Simulating real attacks on software systems to assess the risk associated with potential security breaches to provide students with hands-on experience necessary for a successful career path in the cybersecurity field. Students are trained as penetration testers to learn how to discover vulnerabilities, exploit vulnerabilities, and to determine what attackers might gain after a successful vulnerability exploitation.",
+      "units": 6,
+      "prerequisites": "This course is only available to students enrolled in the master of cybersecurity program.",
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "785",
+      "title": "Secure Software Design",
+      "description": "The security of software depends on how well the requirements match the needs that the software is to address, how well the software is designed, implemented, tested, and deployed and maintained. This is an advanced course on the rigorous development and use of software that reliably preserves the security properties of the information and systems it protects.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "786",
+      "title": "Cloud and Network Security",
+      "description": "The course covers network attacks as well as techniques to defend against them. This includes protocol-specific attacks (e.g., TCP/IP and BGP) and generic attacks (e.g., Denial of Service); infrastructure topics such as centralized control, SDN, virtualization, NFV, intrusion detection; and new technologies related to containers, IoT, access, 5G.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "789",
+      "title": "Applied Cryptography",
+      "description": "Explores modern cryptographic and cryptoanalytics techniques in detail, and emphasizes how such mechanisms can be effectively used within larger security systems, and finding their vulnerabilities. Topics covered include cryptographic primitives, public key encryption, digital signature, message authentication codes, cryptographic protocols, and attacks.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "827",
+      "title": "Intelligent Systems",
+      "description": "Intelligent systems are knowledge-based computer programs which emulate the reasoning abilities of human experts. This introductory course will analyze the underlying artificial intelligence methodology and survey advances in rule-based systems, constraint solving, incremental reasoning, intelligent backtracking and heuristic local search methods. We will look specifically at research applications in intelligent scheduling, configuration and planning. The course is intended for graduate students with a reasonable background in symbolic programming.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "980",
+      "title": "Special Topics in Computing Science",
+      "description": "This course aims to give students experience to emerging important areas of computing science.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "981",
+      "title": "Special Topics in Theoretical Computing Science",
+      "description": null,
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "982",
+      "title": "Special Topics in Networks and Systems",
+      "description": null,
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "983",
+      "title": "Special Topics in Artificial Intelligence",
+      "description": null,
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "984",
+      "title": "Special Topics in Databases, Data Mining, Computational Biology",
+      "description": null,
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    },
+    {
+      "code": "985",
+      "title": "Special Topics in Graphics, HCI, Visualization, Vision, Multimedia",
+      "description": "Examines current research topics in computer graphics, human computer interaction (including audio), computer vision and visualization.",
+      "units": 3,
+      "prerequisites": null,
+      "corequisites": null,
+      "hasLectureSection": true,
+      "fetchedSection": "G100"
+    }
+  ],
+  "failedCourses": [
+    {
+      "code": "340",
+      "title": "Biomedical Computing",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "409",
+      "title": "Special Topics in Theoretical Computing Science",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "415",
+      "title": "Special Research Projects",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "416",
+      "title": "Special Research Projects",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "426",
+      "title": "Practicum I",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "427",
+      "title": "Practicum II",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "428",
+      "title": "Practicum III",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "429",
+      "title": "Practicum IV",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "430",
+      "title": "Practicum V",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "494",
+      "title": "Software Systems Program Capstone Project I",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "495",
+      "title": "Software Systems Capstone Project II",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "496",
+      "title": "Directed Studies",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "497",
+      "title": "Dual Degree Program Capstone Project",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "498",
+      "title": "Honours Research Project",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "626",
+      "title": "Graduate Co-op I",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "627",
+      "title": "Graduate Co-op II",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "628",
+      "title": "Graduate Co-op III",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "631",
+      "title": "Industrial Internship",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "894",
+      "title": "Directed Reading",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "895",
+      "title": "Master Program Extended Essay",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "896",
+      "title": "MSc Course Option Portfolio",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "897",
+      "title": "MSc Project",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "898",
+      "title": "MSc Thesis",
+      "reason": "No lecture section found"
+    },
+    {
+      "code": "899",
+      "title": "PhD Thesis",
+      "reason": "No lecture section found"
+    }
+  ]
+}

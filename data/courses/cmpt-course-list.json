@@ -1,0 +1,348 @@
+{
+  "metadata": {
+    "fetchedAt": "2026-01-19T23:59:36.889Z",
+    "department": "CMPT",
+    "fetchType": "course-list",
+    "totalCourses": 84,
+    "source": "SFU Course Outlines API",
+    "apiUrl": "http://www.sfu.ca/bin/wcm/course-outlines?current/current/CMPT/"
+  },
+  "courses": [
+    {
+      "code": "105W",
+      "title": "Social Issues and Communication Strategies in Computing Science"
+    },
+    {
+      "code": "120",
+      "title": "Introduction to Computing Science and Programming I"
+    },
+    {
+      "code": "125",
+      "title": "Introduction to Computing Science and Programming II"
+    },
+    {
+      "code": "130",
+      "title": "Introduction to Computer Programming I"
+    },
+    {
+      "code": "201",
+      "title": "Systems Programming"
+    },
+    {
+      "code": "210",
+      "title": "Probability and Computing"
+    },
+    {
+      "code": "213",
+      "title": "Object Oriented Design in Java"
+    },
+    {
+      "code": "225",
+      "title": "Data Structures and Programming"
+    },
+    {
+      "code": "263",
+      "title": "Introduction to Human-Centered Computing"
+    },
+    {
+      "code": "276",
+      "title": "Introduction to Software Engineering"
+    },
+    {
+      "code": "295",
+      "title": "Introduction to Computer Systems"
+    },
+    {
+      "code": "307",
+      "title": "Data Structures and Algorithms"
+    },
+    {
+      "code": "308",
+      "title": "Computability and Complexity"
+    },
+    {
+      "code": "310",
+      "title": "Introduction to Artificial Intelligence"
+    },
+    {
+      "code": "340",
+      "title": "Biomedical Computing"
+    },
+    {
+      "code": "354",
+      "title": "Database Systems I"
+    },
+    {
+      "code": "361",
+      "title": "Introduction to Visual Computing"
+    },
+    {
+      "code": "362",
+      "title": "Mobile Applications Programming and Design"
+    },
+    {
+      "code": "365",
+      "title": "Multimedia Systems"
+    },
+    {
+      "code": "371",
+      "title": "Data Communications and Networking"
+    },
+    {
+      "code": "373",
+      "title": "Software Development Methods"
+    },
+    {
+      "code": "376W",
+      "title": "Professional Responsibility and Technical Writing"
+    },
+    {
+      "code": "383",
+      "title": "Comparative Programming Languages"
+    },
+    {
+      "code": "403",
+      "title": "System Security and Privacy"
+    },
+    {
+      "code": "405",
+      "title": "Design and Analysis of Computing Algorithms"
+    },
+    {
+      "code": "409",
+      "title": "Special Topics in Theoretical Computing Science"
+    },
+    {
+      "code": "410",
+      "title": "Machine Learning"
+    },
+    {
+      "code": "413",
+      "title": "Computational Linguistics"
+    },
+    {
+      "code": "415",
+      "title": "Special Research Projects"
+    },
+    {
+      "code": "416",
+      "title": "Special Research Projects"
+    },
+    {
+      "code": "417",
+      "title": "Intelligent Systems"
+    },
+    {
+      "code": "419",
+      "title": "Special Topics in Artificial Intelligence"
+    },
+    {
+      "code": "426",
+      "title": "Practicum I"
+    },
+    {
+      "code": "427",
+      "title": "Practicum II"
+    },
+    {
+      "code": "428",
+      "title": "Practicum III"
+    },
+    {
+      "code": "429",
+      "title": "Practicum IV"
+    },
+    {
+      "code": "430",
+      "title": "Practicum V"
+    },
+    {
+      "code": "431",
+      "title": "Distributed Systems"
+    },
+    {
+      "code": "441",
+      "title": "Computational Biology"
+    },
+    {
+      "code": "454",
+      "title": "Database Systems II"
+    },
+    {
+      "code": "459",
+      "title": "Special Topics in Database Systems"
+    },
+    {
+      "code": "464",
+      "title": "Geometric Modelling in Computer Graphics"
+    },
+    {
+      "code": "469",
+      "title": "Special Topics in Computer Graphics"
+    },
+    {
+      "code": "477",
+      "title": "Introduction to Formal Verification"
+    },
+    {
+      "code": "479",
+      "title": "Special Topics in Computing Systems"
+    },
+    {
+      "code": "489",
+      "title": "Special Topics in Programming Languages"
+    },
+    {
+      "code": "494",
+      "title": "Software Systems Program Capstone Project I"
+    },
+    {
+      "code": "495",
+      "title": "Software Systems Capstone Project II"
+    },
+    {
+      "code": "496",
+      "title": "Directed Studies"
+    },
+    {
+      "code": "497",
+      "title": "Dual Degree Program Capstone Project"
+    },
+    {
+      "code": "498",
+      "title": "Honours Research Project"
+    },
+    {
+      "code": "626",
+      "title": "Graduate Co-op I"
+    },
+    {
+      "code": "627",
+      "title": "Graduate Co-op II"
+    },
+    {
+      "code": "628",
+      "title": "Graduate Co-op III"
+    },
+    {
+      "code": "631",
+      "title": "Industrial Internship"
+    },
+    {
+      "code": "701",
+      "title": "Computability and Logic"
+    },
+    {
+      "code": "705",
+      "title": "Design and Analysis of Algorithms"
+    },
+    {
+      "code": "711",
+      "title": "Bioinformatics Algorithms"
+    },
+    {
+      "code": "713",
+      "title": "Natural Language Processing"
+    },
+    {
+      "code": "726",
+      "title": "Machine Learning"
+    },
+    {
+      "code": "729",
+      "title": "Reinforcement Learning"
+    },
+    {
+      "code": "732",
+      "title": "Big Data Lab I"
+    },
+    {
+      "code": "742",
+      "title": "Visual Computing Lab I"
+    },
+    {
+      "code": "762",
+      "title": "Computer Vision"
+    },
+    {
+      "code": "764",
+      "title": "Geometric Modelling in Computer Graphics"
+    },
+    {
+      "code": "766",
+      "title": "Computer Animation and Simulation"
+    },
+    {
+      "code": "777",
+      "title": "Formal Verification"
+    },
+    {
+      "code": "782",
+      "title": "Cybersecurity Lab I"
+    },
+    {
+      "code": "785",
+      "title": "Secure Software Design"
+    },
+    {
+      "code": "786",
+      "title": "Cloud and Network Security"
+    },
+    {
+      "code": "789",
+      "title": "Applied Cryptography"
+    },
+    {
+      "code": "827",
+      "title": "Intelligent Systems"
+    },
+    {
+      "code": "894",
+      "title": "Directed Reading"
+    },
+    {
+      "code": "895",
+      "title": "Master Program Extended Essay"
+    },
+    {
+      "code": "896",
+      "title": "MSc Course Option Portfolio"
+    },
+    {
+      "code": "897",
+      "title": "MSc Project"
+    },
+    {
+      "code": "898",
+      "title": "MSc Thesis"
+    },
+    {
+      "code": "899",
+      "title": "PhD Thesis"
+    },
+    {
+      "code": "980",
+      "title": "Special Topics in Computing Science"
+    },
+    {
+      "code": "981",
+      "title": "Special Topics in Theoretical Computing Science"
+    },
+    {
+      "code": "982",
+      "title": "Special Topics in Networks and Systems"
+    },
+    {
+      "code": "983",
+      "title": "Special Topics in Artificial Intelligence"
+    },
+    {
+      "code": "984",
+      "title": "Special Topics in Databases, Data Mining, Computational Biology"
+    },
+    {
+      "code": "985",
+      "title": "Special Topics in Graphics, HCI, Visualization, Vision, Multimedia"
+    }
+  ]
+}

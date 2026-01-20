@@ -1,7 +1,13 @@
-import { SFUCourseResponse, SFUCourseSectionResponse } from '@/engine/types/APIValidationType';
+import { SFUCourseResponse } from '@/engine/types/APIValidationType';
 import { getDepartmentList, getCourseList, getCourseSection, getCourseDetail } from './getAPI';
+import {
+  CourseListJSON,
+  CourseDetailJSON,
+  CourseDetailItem,
+  FailedCourse,
+} from '@/engine/types/Course';
 import fs from 'fs/promises';
-import { get } from 'http';
+import path, { parse } from 'path';
 
 // Batch processing utility to limit concurrency
 async function batchProcess<T, R>(
@@ -18,118 +24,194 @@ async function batchProcess<T, R>(
   return results;
 }
 
-async function saveToJSON(data: any, filename: string) {}
+async function saveToJSON(data: any, filename: string, subdir?: string) {
+  const dataDir = subdir
+    ? path.join(process.cwd(), 'data', subdir)
+    : path.join(process.cwd(), 'data');
+
+  await fs.mkdir(dataDir, { recursive: true });
+
+  const filepath = path.join(dataDir, filename);
+  // const metadata = {
+  //   fetchedAt: new Date().toISOString(),
+  // };
+  await fs.writeFile(filepath, JSON.stringify(data, null, 2), 'utf-8');
+  console.log(`Data saved to ${filepath}`);
+}
+
 // Main function to get all courses from all departments
 // This function fetches the list of departments, then for each department,
 // it fetches the list of courses and aggregates them.
-export async function getAllCoursesList() {
+export async function getCourseListForDepartment(department: string): Promise<CourseListJSON> {
+  console.log('Fetching courses for department:', department);
+  const courses: SFUCourseResponse[] = await getCourseList(department);
+
+  const courseListJSON: CourseListJSON = {
+    metadata: {
+      fetchedAt: new Date().toISOString(),
+      department: department,
+      fetchType: 'course-list',
+      totalCourses: courses.length,
+      source: 'SFU Course Outlines API',
+      apiUrl: `http://www.sfu.ca/bin/wcm/course-outlines?current/current/${department}/`,
+    },
+    courses: courses.map((course) => ({
+      code: course.text,
+      title: course.title,
+    })),
+  };
+  await saveToJSON(courseListJSON, `${department.toLowerCase()}-course-list.json`, 'courses');
+  return courseListJSON;
+}
+
+export async function getAllCoursesList(): Promise<Map<string, CourseListJSON>> {
+  console.log('\nFetching all course lists...\n');
+
   const departments = await getDepartmentList();
   console.log('Departments fetched:', departments.length);
 
   const successfulDepts: string[] = [];
   const failedDepts: string[] = [];
+  const courseListMap = new Map<string, CourseListJSON>();
 
-  const allCourses = await batchProcess(
-    // Filtering out departments without a name
-    departments.filter((d) => d.name),
+  const results = await batchProcess(
+    departments.filter((d) => d.name), // Filtering out departments without a name
     async (dept) => {
       try {
-        const courses: SFUCourseResponse[] = await getCourseList(dept.text);
-        successfulDepts.push(dept.text); // Track successful fetches
-        return courses.map((c) => ({ dept: dept.text, course: c }));
+        const courseList = await getCourseListForDepartment(dept.text);
+        successfulDepts.push(dept.text);
+        return { success: true, department: dept.text, data: courseList };
       } catch (error) {
-        failedDepts.push(dept.text); // Track failed fetches
+        failedDepts.push(dept.text);
         console.error(`Error fetching courses for department ${dept.text}:`, error);
-        return [];
+        return { success: false, department: dept.text, data: null };
       }
     },
-    10,
+    5,
   );
 
-  const flatCourses = allCourses.flat();
+  results.forEach((result) => {
+    if (result.success && result.data) {
+      courseListMap.set(result.department, result.data);
+    }
+  });
 
   console.log(`Successfully fetched courses for departments: ${successfulDepts.join(', ')}`);
   if (failedDepts.length > 0) {
     console.warn(`Failed to fetch courses for departments: ${failedDepts.join(', ')}`);
   }
-  return flatCourses;
+  return courseListMap;
 }
 
-async function getCourseDetailsWithLec(dept: string, code: string) {
-  try {
-    const sections: SFUCourseSectionResponse[] = await getCourseSection(dept, code);
-    const lecSection = sections.find((section) => section.sectionCode === 'LEC');
-    console.log('Lecture Section found', lecSection);
-    if (!lecSection) {
-      console.warn(`No LEC section found for ${dept} ${code} for current semester`);
-      return null;
-    }
-    const details = await getCourseDetail(dept, code, lecSection.sectionCode);
-    return details;
-  } catch (error) {
-    console.error('Error fetching course details for', dept, code, error);
-    return null;
+async function fetchAndSaveCourseDetails(
+  department: string,
+  courseList?: CourseListJSON,
+): Promise<CourseDetailJSON> {
+  console.log(`Fetching course details for department: ${department}`);
+
+  if (!courseList) {
+    console.log('No course list provided, fetching course list from API');
+    courseList = await getCourseListForDepartment(department);
   }
-}
 
-export async function getAllCoursesWithDetails() {
-  const courses = await getAllCoursesList();
-  console.log('Total courses fetched:', courses.length);
-  console.log('Fetching course details for each course...');
+  const detailedCourses: CourseDetailItem[] = [];
+  const failedCourses: FailedCourse[] = [];
+  let processed = 0;
 
-  const coursesWithDetails = await batchProcess(
-    courses,
-    async (raw) => {
-      const details = await getCourseDetailsWithLec(raw.dept, raw.course.text);
-      if (!details) {
-        return null;
+  const results = await batchProcess(
+    courseList.courses,
+    async (course) => {
+      processed++;
+      try {
+        const sections = await getCourseSection(department, course.code);
+        const lecSection = sections.find((s) => s.sectionCode === 'LEC');
+
+        if (!lecSection) {
+          console.warn('No lecture section found for', department, course.code);
+          return {
+            success: false,
+            course: course,
+            reason: 'No lecture section found',
+          };
+        }
+        const details = await getCourseDetail(department, course.code, lecSection.text);
+        return {
+          success: true,
+          course: {
+            code: course.code,
+            title: course.title,
+            description: details.info.description || null,
+            units: details.info.units ? parseFloat(details.info.units) : null,
+            prerequisites: details.info.prerequisites || null,
+            corequisites: details.info.corequisites || null,
+            hasLectureSection: true,
+            fetchedSection: lecSection.text,
+          },
+        };
+      } catch (error) {
+        console.error(`Error fetching details for ${department} ${course.code}:`, error);
+        return {
+          success: false,
+          course: course,
+          reason: error instanceof Error ? error.message : 'Unknown error',
+        };
       }
-      return {
-        dept: raw.dept,
-        code: raw.course.text,
-        title: raw.course.title,
-        prerequisites: details.info.prerequisites,
-        corequisites: details.info.corequisites,
-        description: details.info.description,
-        units: details.info.units ? parseFloat(details.info.units) : 0,
-      };
     },
-    5,
+    3,
   );
 
-  const validCourses = coursesWithDetails.filter((c) => c !== null);
-  console.log('Total courses with details fetched:', validCourses.length);
-  return validCourses;
+  results.forEach((result) => {
+    if (result.success && 'course' in result && result.course) {
+      detailedCourses.push(result.course as CourseDetailItem);
+    } else if (!result.success && 'course' in result && 'reason' in result) {
+      failedCourses.push({
+        code: result.course.code,
+        title: result.course.title,
+        reason: result.reason,
+      });
+    }
+  });
+
+  const courseDetailJSON: CourseDetailJSON = {
+    metadata: {
+      fetchedAt: new Date().toISOString(),
+      department: department,
+      fetchType: 'course-detail',
+      totalCourse: courseList.courses.length,
+      successfulFetches: detailedCourses.length,
+      failedFetches: failedCourses.length,
+      sources: 'SFU Course Outlines API',
+      notes:
+        failedCourses.length > 0
+          ? 'Some courses failed to fetch details'
+          : 'All courses fetched successfully',
+    },
+    courses: detailedCourses,
+    failedCourses: failedCourses,
+  };
+
+  await saveToJSON(
+    courseDetailJSON,
+    `${department.toLowerCase()}-course-details.json`,
+    'course-details',
+  );
+  console.log(
+    `Finished fetching details for department: ${department}. Successful: ${detailedCourses.length}, Failed: ${failedCourses.length}`,
+  );
+  return courseDetailJSON;
 }
 
 async function main() {
-  const courses = await getAllCoursesList();
-  console.log(courses.slice(0, 3));
-
-  const cmptCourses = courses.filter((c) => c.dept === 'CMPT');
-  for (const course of cmptCourses) {
-    const details = await getCourseDetailsWithLec(course.dept, course.course.text);
+  const department = 'CMPT';
+  try {
+    const courseList = await getCourseListForDepartment(department);
+    const courseDetails = await fetchAndSaveCourseDetails(department, courseList);
+    console.log(
+      `Course details fetched for ${department}: ${courseDetails.courses.length} successful, ${courseDetails.failedCourses.length} failed.`,
+    );
+  } catch (error) {
+    console.error('Error in main:', error);
+    process.exit(1);
   }
-  // const getAllCoursesWithDetailsResults = await getAllCoursesWithDetails();
-  // console.log(getAllCoursesWithDetailsResults.slice(0, 3));
-  // console.log(await getCourseDetail('CMPT', '225', 'D100'));
 }
-
 main().catch(console.error);
-// console.log(
-//   getCourseList('CMPT')
-//     .then((data) => console.log(data))
-//     .catch(console.error),
-// );
-
-// console.log(
-//   getCourseSection('CMPT', '225')
-//     .then((data) => console.log(data))
-//     .catch(console.error),
-// );
-
-// console.log(
-//   getCourseDetail('CMPT', '225', 'D100')
-//     .then((data) => console.log(data))
-//     .catch(console.error),
-// );
