@@ -7,7 +7,7 @@ import {
   FailedCourse,
 } from '@/engine/types/Course';
 import fs from 'fs/promises';
-import path, { parse } from 'path';
+import path from 'path';
 
 // Batch processing utility to limit concurrency
 async function batchProcess<T, R>(
@@ -24,7 +24,7 @@ async function batchProcess<T, R>(
   return results;
 }
 
-async function saveToJSON(data: any, filename: string, subdir?: string) {
+async function saveToJSON(data: unknown, filename: string, subdir?: string) {
   const dataDir = subdir
     ? path.join(process.cwd(), 'data', subdir)
     : path.join(process.cwd(), 'data');
@@ -32,9 +32,6 @@ async function saveToJSON(data: any, filename: string, subdir?: string) {
   await fs.mkdir(dataDir, { recursive: true });
 
   const filepath = path.join(dataDir, filename);
-  // const metadata = {
-  //   fetchedAt: new Date().toISOString(),
-  // };
   await fs.writeFile(filepath, JSON.stringify(data, null, 2), 'utf-8');
   console.log(`Data saved to ${filepath}`);
 }
@@ -103,7 +100,7 @@ export async function getAllCoursesList(): Promise<Map<string, CourseListJSON>> 
   return courseListMap;
 }
 
-async function fetchAndSaveCourseDetails(
+export async function fetchAndSaveCourseDetails(
   department: string,
   courseList?: CourseListJSON,
 ): Promise<CourseDetailJSON> {
@@ -116,12 +113,10 @@ async function fetchAndSaveCourseDetails(
 
   const detailedCourses: CourseDetailItem[] = [];
   const failedCourses: FailedCourse[] = [];
-  let processed = 0;
 
   const results = await batchProcess(
     courseList.courses,
     async (course) => {
-      processed++;
       try {
         const sections = await getCourseSection(department, course.code);
         const lecSection = sections.find((s) => s.sectionCode === 'LEC');
@@ -135,13 +130,14 @@ async function fetchAndSaveCourseDetails(
           };
         }
         const details = await getCourseDetail(department, course.code, lecSection.text);
+        const rawUnits = details.info.units ? parseFloat(details.info.units) : null;
         return {
           success: true,
           course: {
             code: course.code,
             title: course.title,
             description: details.info.description || null,
-            units: details.info.units ? parseFloat(details.info.units) : null,
+            units: rawUnits !== null && !isNaN(rawUnits) ? rawUnits : null,
             prerequisites: details.info.prerequisites || null,
             corequisites: details.info.corequisites || null,
             hasLectureSection: true,
@@ -200,18 +196,3 @@ async function fetchAndSaveCourseDetails(
   );
   return courseDetailJSON;
 }
-
-async function main() {
-  const department = 'CMPT';
-  try {
-    const courseList = await getCourseListForDepartment(department);
-    const courseDetails = await fetchAndSaveCourseDetails(department, courseList);
-    console.log(
-      `Course details fetched for ${department}: ${courseDetails.courses.length} successful, ${courseDetails.failedCourses.length} failed.`,
-    );
-  } catch (error) {
-    console.error('Error in main:', error);
-    process.exit(1);
-  }
-}
-main().catch(console.error);

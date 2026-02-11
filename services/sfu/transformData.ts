@@ -8,14 +8,13 @@ export function transformCourseData(
   corequisites: string,
   description: string,
   credits: number,
-): Course[] {
-  const courseID = rawCourses.text;
-  const id: string = courseID;
+): CourseWithDetails {
+  const id = rawCourses.text;
 
   return {
     id,
     department: dept,
-    name: rawCourses.title || courseID,
+    name: rawCourses.title || id,
     description: description || '',
     credits: credits || 0,
     prerequisites: prerequisites ? prerequisites.split(',').map((prereq) => prereq.trim()) : [],
